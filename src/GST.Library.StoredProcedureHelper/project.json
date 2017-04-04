@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Microsoft.EntityFrameworkCore": "1.1.1",
+    "Npgsql.EntityFrameworkCore.PostgreSQL": "1.1.0",
+    "NETStandard.Library": "1.6.1",
+    "System.Data.Common": "4.3.0",
+    "GST.Library.Helper": {
+      "target": "project"
+    }
+  },
+
+  "frameworks": {
+    "netcoreapp1.1": {
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
+      ]
+    }
+  }
+}
