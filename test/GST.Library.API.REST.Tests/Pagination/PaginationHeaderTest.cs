@@ -1,10 +1,6 @@
 ﻿using GST.Library.API.REST.Pagination;
 using Microsoft.AspNetCore.Http;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace GST.Library.API.REST.Tests.Pagination
