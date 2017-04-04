@@ -1,0 +1,10 @@
+.vs/
+**/bin/
+**/obj/
+/test/**/Coverage/
+/test/**/Coverage.xml
+/Coverage/
+Coverage.xml
+**/vars/logs/
+publish/
+**/project.lock.json
