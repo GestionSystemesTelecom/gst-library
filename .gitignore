@@ -5,6 +5,6 @@
 /test/**/Coverage.xml
 /Coverage/
 Coverage.xml
-**/vars/logs/
-publish/
+artifacts/
+tools/
 **/project.lock.json
