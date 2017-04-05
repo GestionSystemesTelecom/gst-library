@@ -19,6 +19,14 @@ build_script:
 - dotnet build ./src/GST.Library.StoredProcedureHelper/project.json
 before_build:
 - appveyor-retry dotnet restore -v Minimal
+artifacts:
+  - path: 'src\**\bin\release\*.nupkg'
+    name: Nuget
+deploy:
+  - provider: NuGet
+    api_key:
+      secure: kiMn9uBvgMa5EtEmTIhNBFUfyatiATnhkgx5Xj/1EsmKTtEkUv+hJAQs0L3VGzPw
+    artifact: /.*\.nupkg/
 test_script:
 - dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.API.REST.Tests/project.json
 - dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.Data.Tests/project.json

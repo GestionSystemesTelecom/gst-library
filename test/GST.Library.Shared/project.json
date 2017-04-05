@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "Microsoft.AspNetCore": "1.1.1",
-    "Microsoft.AspNetCore.Mvc": "1.1.2",
+    "Microsoft.AspNetCore.Mvc": "1.1.1",
     "Moq": "4.7.8"
   },
   "testRunner": "xunit",

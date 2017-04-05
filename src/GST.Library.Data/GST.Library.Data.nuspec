@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>GST.Library</id>
-    <version>1.0.0</version>
-    <authors>Valérian Girard</authors>
+    <id>GST.Library.Data</id>
+    <version>$version$</version>
+    <authors>Gestion Systèmes Télécom (GST)</authors>
     <owners>Gestion Systèmes Télécom (GST)</owners>
     <licenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/GestionSystemesTelecom/gst-library</projectUrl>
     <iconUrl>https://avatars3.githubusercontent.com/u/25814331</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Library for daily work</description>
-    <copyright>Copyright 2017</copyright>  
+    <copyright>Copyright 2017</copyright>
+    <dependencies />
   </metadata>
 </package>
