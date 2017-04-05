@@ -4,23 +4,23 @@ init:
 install:
   - ECHO %APPVEYOR_BUILD_WORKER_IMAGE%
   - dotnet --version
-  - dotnet restore -v /src/GST.Library.API.REST/project.json
-  - dotnet restore -v /src/GST.Library.Data/project.json
-  - dotnet restore -v /src/GST.Library.Helper/project.json
-  - dotnet restore -v /src/GST.Library.StoredProcedureHelper/project.json
-  - dotnet restore -v /test/GST.Library.API.REST.Tests/project.json
-  - dotnet restore -v /test/GST.Library.Data.Tests/project.json
-  - dotnet restore -v /test/GST.Library.Helper.Tests/project.json
-  - dotnet restore -v /test/GST.Library.StoredProcedureHelper.Tests/project.json
+  - dotnet restore ./src/GST.Library.API.REST/project.json
+  - dotnet restore ./src/GST.Library.Data/project.json
+  - dotnet restore ./src/GST.Library.Helper/project.json
+  - dotnet restore ./src/GST.Library.StoredProcedureHelper/project.json
+  - dotnet restore ./test/GST.Library.API.REST.Tests/project.json
+  - dotnet restore ./test/GST.Library.Data.Tests/project.json
+  - dotnet restore ./test/GST.Library.Helper.Tests/project.json
+  - dotnet restore ./test/GST.Library.StoredProcedureHelper.Tests/project.json
 build_script:
-- dotnet build /src/GST.Library.API.REST/project.json
-- dotnet build /src/GST.Library.Data/project.json
-- dotnet build /src/GST.Library.Helper/project.json
-- dotnet build /src/GST.Library.StoredProcedureHelper/project.json
+- dotnet build ./src/GST.Library.API.REST/project.json
+- dotnet build ./src/GST.Library.Data/project.json
+- dotnet build ./src/GST.Library.Helper/project.json
+- dotnet build ./src/GST.Library.StoredProcedureHelper/project.json
 before_build:
 - appveyor-retry dotnet restore -v Minimal
 test_script:
-- dotnet test -f netcoreapp1.1 -c Test /test/GST.Library.API.REST.Tests/project.json
-- dotnet test -f netcoreapp1.1 -c Test /test/GST.Library.Data.Tests/project.json
-- dotnet test -f netcoreapp1.1 -c Test /test/GST.Library.Helper.Tests/project.json
-- dotnet test -f netcoreapp1.1 -c Test /test/GST.Library.StoredProcedureHelper.Tests/project.json
+- dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.API.REST.Tests/project.json
+- dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.Data.Tests/project.json
+- dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.Helper.Tests/project.json
+- dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.StoredProcedureHelper.Tests/project.json
