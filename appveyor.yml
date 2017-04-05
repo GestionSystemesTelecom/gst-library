@@ -20,7 +20,6 @@ build_script:
 before_build:
 - appveyor-retry dotnet restore -v Minimal
 test_script:
-- cd src/AspNetCoreProtobuf.IntegrationTests
 - dotnet test -f netcoreapp1.1 -c Test /test/GST.Library.API.REST.Tests/project.json
 - dotnet test -f netcoreapp1.1 -c Test /test/GST.Library.Data.Tests/project.json
 - dotnet test -f netcoreapp1.1 -c Test /test/GST.Library.Helper.Tests/project.json
