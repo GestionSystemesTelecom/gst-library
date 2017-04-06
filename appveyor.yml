@@ -20,10 +20,7 @@ artifacts:
   - path: 'artifacts\*.nupkg'
     name: Nuget
 deploy:
-  - provider: NuGet
-    api_key:
-      secure: kiMn9uBvgMa5EtEmTIhNBFUfyatiATnhkgx5Xj/1EsmKTtEkUv+hJAQs0L3VGzPw
-    artifact: /.*\.nupkg/
+  - provider: NuGet.org
 test_script:
 - dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.API.REST.Tests/project.json
 - dotnet test -f netcoreapp1.1 -c Test ./test/GST.Library.Data.Tests/project.json
