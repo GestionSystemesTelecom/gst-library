@@ -2,7 +2,11 @@
 
 > Helper for runing Stored Procedure against a Postgresql database
 
-## Initialisation
+## Install
+
+Like all [Nuget](https://www.nuget.org/packages/GST.Library.StoredProcedureHelper/) package: `Install-Package GST.Library.StoredProcedureHelper`
+
+## Configuration
 
 First you have to reference a service (in the Startup class) where `YourDBContext` is your database context :
 

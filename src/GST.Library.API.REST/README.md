@@ -2,6 +2,10 @@
 
 > Helper for building nice REST API
 
+## Install
+
+Like all [Nuget](https://www.nuget.org/packages/GST.Library.API.REST/) package: `Install-Package GST.Library.API.REST`
+
 ## Model State validation
 
 Base on [Filip W](http://www.strathweb.com/2012/10/clean-up-your-web-api-controllers-with-model-validation-and-null-check-filters/)'s work.

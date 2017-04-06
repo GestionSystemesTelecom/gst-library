@@ -13,7 +13,12 @@ What's inside :
 
 ## How to Install
 
-Not a clue for now.
+We provide four pakages:
+
+ * `Install-Package GST.Library.API.REST`
+ * `Install-Package GST.Library.Data`
+ * `Install-Package GST.Library.Helper`
+ * `Install-Package GST.Library.StoredProcedureHelper`
 
 ## How to build Nuget Package
 
