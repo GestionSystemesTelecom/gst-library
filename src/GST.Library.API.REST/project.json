@@ -1,13 +1,11 @@
-﻿{
+{
   "version": "1.0.0-*",
-
   "dependencies": {
     "Microsoft.AspNetCore.Http": "1.1.1",
     "Microsoft.AspNetCore.Mvc": "1.1.1",
     "NETStandard.Library": "1.6.1",
     "Newtonsoft.Json": "10.0.2"
   },
-
   "frameworks": {
     "netcoreapp1.1": {
       "imports": [
@@ -15,5 +13,8 @@
         "portable-net45+win8"
       ]
     }
+  },
+  "buildOptions": {
+    "xmlDoc": true
   }
 }

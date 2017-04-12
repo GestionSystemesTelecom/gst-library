@@ -23,13 +23,16 @@ namespace GST.Library.StoredProcedureHelper
         /// <param name="parameters"></param>
         /// <returns></returns>
         /// <example>
+        /// <code><pre>
         /// IDictionary<string, string> parameters = new Dictionary<string, string>()
         ///  {
         ///     { "name", "andrea" },
         ///     { "age", 24 },
         ///   };
         /// storedProcedureService.CreateStoredProcedure<EvenementViewModel>("StoredProcedureNameInTheDatabase", parameters)
+        /// </pre></code>
         /// </example>
+        /// 
         StoredProcedure<T> CreateStoredProcedure<T>(string storedProcedureName, IDictionary<string, string> parameters) where T : new();
     }
 }

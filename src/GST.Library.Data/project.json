@@ -1,10 +1,8 @@
-﻿{
+{
   "version": "1.0.0-*",
-
   "dependencies": {
     "System.Linq.Queryable": "4.3.0"
   },
-
   "frameworks": {
     "netcoreapp1.1": {
       "imports": [
@@ -12,5 +10,8 @@
         "portable-net45+win8"
       ]
     }
+  },
+  "buildOptions": {
+    "xmlDoc": true
   }
 }
