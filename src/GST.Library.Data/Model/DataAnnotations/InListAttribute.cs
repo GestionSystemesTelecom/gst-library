@@ -41,7 +41,7 @@ namespace GST.Library.Data.Model.DataAnnotations
         /// Override of <see cref="ValidationAttribute.FormatErrorMessage"/>
         /// </summary>
         /// <param name="name">The name to include in the formatted string</param>
-        /// <returns>A localized string to describe the maximum acceptable length</returns>
+        /// <returns>A localized string to describe the error</returns>
         /// <exception cref="InvalidOperationException"> is thrown if the current attribute is ill-formed.</exception>
         public override string FormatErrorMessage(string name)
         {
