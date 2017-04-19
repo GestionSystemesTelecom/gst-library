@@ -1,6 +1,8 @@
 {
   "version": "1.0.1-*",
   "dependencies": {
+    "System.ComponentModel.Annotations": "4.3.0",
+    "System.Globalization": "4.3.0",
     "System.Linq.Queryable": "4.3.0"
   },
   "frameworks": {
