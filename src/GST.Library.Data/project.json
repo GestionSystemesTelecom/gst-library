@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1-*",
+  "version": "1.0.2-*",
   "dependencies": {
     "System.ComponentModel.Annotations": "4.3.0",
     "System.Globalization": "4.3.0",
