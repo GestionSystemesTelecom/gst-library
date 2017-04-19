@@ -1,6 +1,7 @@
 ﻿using GST.Library.Data.Model.DataAnnotations;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -34,6 +35,19 @@ namespace GST.Library.Data.Tests.Model.DataAnnotations
             });
 
             Assert.Equal("The field aFieldName is not an allowed value", il.FormatErrorMessage("aFieldName"));
+        }
+
+        [Fact]
+        public void mustSucceedWithAnnotation()
+        {
+            InListObject ilo = new InListObject();
+            ilo.someString = "mustRaisedError";
+
+            ValidationContext context = new ValidationContext(ilo, null, null);
+            var result = new List<ValidationResult>();
+
+            Validator.TryValidateObject(ilo, context, result, true);
+            Assert.Equal("The field someString is not an allowed value", result.FirstOrDefault().ErrorMessage);
         }
     }
 }

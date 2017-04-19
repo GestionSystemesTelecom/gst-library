@@ -1,9 +1,12 @@
 {
-  "version": "1.0.2-*",
+  "version": "1.0.3-*",
   "dependencies": {
     "System.ComponentModel.Annotations": "4.3.0",
     "System.Globalization": "4.3.0",
-    "System.Linq.Queryable": "4.3.0"
+    "System.Linq.Queryable": "4.3.0",
+    "GST.Library.Helper": {
+      "target": "project"
+    }
   },
   "frameworks": {
     "netcoreapp1.1": {

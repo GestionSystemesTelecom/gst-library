@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
+using GST.Library.Helper.Type;
 
 namespace GST.Library.Data.Model.DataAnnotations
 {
@@ -12,15 +12,22 @@ namespace GST.Library.Data.Model.DataAnnotations
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
     public class InListAttribute : ValidationAttribute
     {
-        private IEnumerable<object> expectedList;
+        /// <summary>
+        /// List of allowed string
+        /// </summary>
+        public string[] AllowedValue { get; private set; }
 
         /// <summary>
         /// List of things
         /// </summary>
-        /// <param name="expectedList"></param>
-        public InListAttribute(IEnumerable<object> expectedList) : base(() => "The field {0} is not an allowed value")
+        /// <param name="AllowedValue"></param>
+        public InListAttribute(string[] AllowedValue) : this()
         {
-            this.expectedList = expectedList;
+            this.AllowedValue = AllowedValue;
+        }
+
+        private InListAttribute() : base(() => "The field {0} is not an allowed value")
+        {
         }
 
         /// <summary>
@@ -34,7 +41,12 @@ namespace GST.Library.Data.Model.DataAnnotations
                 return true;
             }
 
-            return this.expectedList.Any(el => el == value);
+            if (!value.IsString())
+            {
+                throw new InvalidCastException();
+            }
+
+            return this.AllowedValue.Any(el => el == value.ToString());
         }
 
         /// <summary>
