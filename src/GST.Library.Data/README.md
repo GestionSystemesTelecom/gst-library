@@ -20,3 +20,17 @@ IEnumerable<Client> clientList = clientRepository
         .OrderBy(sortList, "asc")
         .ToList();
 ```
+
+## Model Validation
+
+### InList
+
+To validate that an value is in an allowed list, you can use the `InList` data annotation like bellow : 
+
+```C#
+public class SimpleDTO
+    {
+        [InList(new[]{"valiue 1", "value 2", "value 3"})]
+        public string something { get; set; }
+    }
+```
