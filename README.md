@@ -22,5 +22,5 @@ We provide four pakages:
 
 ## How to build Nuget Package
 
-If you are on Windows, run this commande line : `.\build.ps1 -t BuildPackages`  
-If you are on Linux, run this commande line : `.\build.sh -t BuildPackages`  
+If you are on Windows, run this commande line : `.\build.ps1`  
+If you are on Linux, run this commande line : `.\build.sh`
