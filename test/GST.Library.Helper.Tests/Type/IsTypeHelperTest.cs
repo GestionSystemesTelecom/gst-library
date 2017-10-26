@@ -10,7 +10,7 @@ namespace GST.Library.Helper.Tests.Type
     public class IsTypeHelperTest
     {
         [Fact]
-        public void testAssertString()
+        public void MustAssertString()
         {
             Assert.True("This Is A String".IsString());
 
@@ -24,7 +24,7 @@ namespace GST.Library.Helper.Tests.Type
         }
 
         [Fact]
-        public void testAssertNumeric()
+        public void MustAssertNumeric()
         {
             Assert.True(12.IsNumeric());
 
@@ -43,7 +43,7 @@ namespace GST.Library.Helper.Tests.Type
         }
 
         [Fact]
-        public void testAssertDateTime()
+        public void MustAssertDateTime()
         {
             Assert.True((new DateTime()).IsDate());
 

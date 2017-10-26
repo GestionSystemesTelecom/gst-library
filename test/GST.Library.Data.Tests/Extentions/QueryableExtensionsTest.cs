@@ -11,7 +11,7 @@ namespace GST.Library.Data.Tests.Extentions
     {
 
         [Fact]
-        public void testThrowExceptionOrderBy()
+        public void MustThrowExceptionOrderBy()
         {
             IQueryable<Bumb> data = new List<Bumb> { }.AsQueryable<Bumb>();
 
@@ -22,7 +22,7 @@ namespace GST.Library.Data.Tests.Extentions
         }
 
         [Fact]
-        public void testOrderBy()
+        public void MustOrderBy()
         {
 
             IQueryable<Bumb> data = new List<Bumb>
@@ -45,7 +45,7 @@ namespace GST.Library.Data.Tests.Extentions
         }
 
         [Fact]
-        public void testDontThrowException()
+        public void MustDontThrowException()
         {
             IQueryable<Bumb> data = new List<Bumb>
             {

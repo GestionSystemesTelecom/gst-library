@@ -1,25 +1,17 @@
 ﻿using GST.Library.API.REST.Annotations;
 using GST.Library.Shared.HTTP;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Routing;
-using Moq;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace GST.Library.API.REST.Tests.Annotations
 {
     public class ModelStateValidationAttributeTest
     {
-
         [Fact]
-        public void mustReturnA400Response()
+        public void MustReturnA400Response()
         {
             ModelStateValidationAttribute msva = new ModelStateValidationAttribute();
 
@@ -39,7 +31,7 @@ namespace GST.Library.API.REST.Tests.Annotations
         }
 
         [Fact]
-        public void mustReturnA400ResponseInvalidModel()
+        public void MustReturnA400ResponseInvalidModel()
         {
             ModelStateValidationAttribute msva = new ModelStateValidationAttribute();
 
@@ -57,7 +49,7 @@ namespace GST.Library.API.REST.Tests.Annotations
         }
 
         [Fact]
-        public void mustDoNothing()
+        public void MustDoNothing()
         {
             ModelStateValidationAttribute msva = new ModelStateValidationAttribute();
 

@@ -10,7 +10,7 @@ namespace GST.Library.StoredProcedureHelper.Tests
     public class StoredProcedureTest
     {
         [Fact]
-        public void testMustCount()
+        public void MustCount()
         {
             var dbCommandMock = new Mock<IDbCommand>();
 
@@ -40,7 +40,7 @@ namespace GST.Library.StoredProcedureHelper.Tests
         }
 
         [Fact]
-        public void testMustSelect()
+        public void MustSelect()
         {
             var dbCommandMock = new Mock<IDbCommand>();
 

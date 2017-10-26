@@ -4,6 +4,9 @@ using System.Reflection;
 
 namespace GST.Library.Helper.Type
 {
+    /// <summary>
+    /// IsTypeHelper
+    /// </summary>
     public static class IsTypeHelper
     {
         private static string[] dateFormats = {
@@ -72,6 +75,11 @@ namespace GST.Library.Helper.Type
             return false;
         }
 
+        /// <summary>
+        /// Check if the object is a string
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static bool IsString(this System.Object obj)
         {
             if (obj is PropertyInfo)
@@ -104,8 +112,12 @@ namespace GST.Library.Helper.Type
             }
             return false;
         }
-
-
+        
+        /// <summary>
+        /// Check if the object is a date or a date time
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static bool IsDate(this System.Object obj)
         {
             if (obj is PropertyInfo)

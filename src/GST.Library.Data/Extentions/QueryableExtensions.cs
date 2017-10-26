@@ -4,9 +4,11 @@ using System.Linq.Expressions;
 
 namespace GST.Library.Data.Extentions
 {
+    /// <summary>
+    /// QueryableExtensions
+    /// </summary>
     public static class QueryableExtensions
     {
-
         /// <summary>
         /// Allow to do an OrderBy on a string list
         /// </summary>

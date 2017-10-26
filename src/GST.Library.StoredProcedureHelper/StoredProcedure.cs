@@ -8,10 +8,17 @@ using System.Reflection;
 
 namespace GST.Library.StoredProcedureHelper
 {
+    /// <summary>
+    /// StoredProcedure
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class StoredProcedure<T> where T : new()
     {
         IDbCommand command;
         string storedFunctioname;
+        /// <summary>
+        /// Parameters List
+        /// </summary>
         public IDictionary<string, string> parameters;
 
         /// <summary>
@@ -35,6 +42,11 @@ namespace GST.Library.StoredProcedureHelper
         /// </summary>
         public string search;
 
+        /// <summary>
+        /// StoredProcedure
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="storedFunctioname"></param>
         public StoredProcedure(IDbCommand command, string storedFunctioname)
         {
             this.command = command;

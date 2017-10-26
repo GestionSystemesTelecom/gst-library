@@ -33,7 +33,9 @@ namespace GST.Library.Data.Model.DataAnnotations
         /// <summary>
         /// Override of <see cref="ValidationAttribute.IsValid(object)"/>
         /// </summary>
-        /// <remarks>This method returns <c>true</c> if the <paramref name="value"/> is null.
+        /// <remarks>
+        /// This method returns <c>true</c> if the <paramref name="value"/> is null.
+        /// </remarks>
         public override bool IsValid(object value)
         {
             if (value == null)

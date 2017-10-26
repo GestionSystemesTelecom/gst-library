@@ -16,6 +16,10 @@ namespace GST.Library.API.REST.Annotations
     [AttributeUsage(AttributeTargets.Method, Inherited = true)]
     public class ModelStateValidationAttribute : ActionFilterAttribute
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="actionContext"></param>
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
 

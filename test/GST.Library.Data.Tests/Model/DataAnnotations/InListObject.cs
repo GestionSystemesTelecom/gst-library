@@ -1,5 +1,4 @@
 ﻿using GST.Library.Data.Model.DataAnnotations;
-using System.Collections.Generic;
 
 namespace GST.Library.Data.Tests.Model.DataAnnotations
 {

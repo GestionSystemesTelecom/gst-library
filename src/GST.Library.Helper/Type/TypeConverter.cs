@@ -3,9 +3,11 @@ using System.Globalization;
 
 namespace GST.Library.Helper.Type
 {
+    /// <summary>
+    /// Convert value to another
+    /// </summary>
     public static class TypeConverter
     {
-
         private static string[] dateFormats = {
                    "yyyy-MM-dd",
                    "yyyy-MM",

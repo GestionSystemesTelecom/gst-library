@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>2.0.0</Version>
+    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <Copyright>GST</Copyright>
+    <Company>GST (Gestion Systemes Telecom)</Company>
+    <Authors>Girard Valérian</Authors>
+    <Description>API Rest Helper</Description>
+    <RepositoryUrl>https://github.com/GestionSystemesTelecom/gst-library</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageIconUrl>https://avatars3.githubusercontent.com/u/25814331</PackageIconUrl>
+    <RepositoryType>nuget</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>GST.Library.Data</AssemblyName>
+    <PackageId>GST.Library.Data</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GST.Library.Helper\GST.Library.Helper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.0" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

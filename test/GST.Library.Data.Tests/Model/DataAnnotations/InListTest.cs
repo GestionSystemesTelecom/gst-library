@@ -1,17 +1,16 @@
 ﻿using GST.Library.Data.Model.DataAnnotations;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace GST.Library.Data.Tests.Model.DataAnnotations
 {
+
     public class InListTest
     {
         [Fact]
-        public void mustValidData()
+        public void MustValidData()
         {
             InListAttribute il = new InListAttribute(new[] {
                 "value 1",
@@ -26,7 +25,8 @@ namespace GST.Library.Data.Tests.Model.DataAnnotations
             Assert.False(il.IsValid("value 4"));
         }
 
-        public void mustFormatErrorMessage()
+        [Fact]
+        public void MustFormatErrorMessage()
         {
             InListAttribute il = new InListAttribute(new[] {
                 "value 1",
@@ -38,7 +38,7 @@ namespace GST.Library.Data.Tests.Model.DataAnnotations
         }
 
         [Fact]
-        public void mustSucceedWithAnnotation()
+        public void MustSucceedWithAnnotation()
         {
             InListObject ilo = new InListObject();
             ilo.someString = "mustRaisedError";
