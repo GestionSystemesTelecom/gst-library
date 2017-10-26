@@ -8,11 +8,15 @@
     <Copyright>GST</Copyright>
     <Company>GST (Gestion Systemes Telecom)</Company>
     <Authors>Girard Valérian</Authors>
-    <Description>API Rest Helper</Description>
+    <Title>GST Library Helper</Title>
+    <Description>Helpers for type detection and object conversion</Description>
+    <Summary>Helpers for type detection and object conversion</Summary>
+    <PackageTags>Type Helpers</PackageTags>
+    <PackageProjectUrl>https://github.com/GestionSystemesTelecom/gst-library/tree/master/src/GST.Library.Helper</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GestionSystemesTelecom/gst-library</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/25814331</PackageIconUrl>
-    <RepositoryType>nuget</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>GST.Library.Helper</AssemblyName>

@@ -8,11 +8,15 @@
     <Copyright>GST</Copyright>
     <Company>GST (Gestion Systemes Telecom)</Company>
     <Authors>Girard Valérian</Authors>
-    <Description>API Rest Helper</Description>
+    <Title>GST Library Data</Title>
+    <Description>Helpers to manage data</Description>
+    <Summary>Helpers to manage data</Summary>
+    <PackageTags>Data Helper</PackageTags>
+    <PackageProjectUrl>https://github.com/GestionSystemesTelecom/gst-library/tree/master/src/GST.Library.Data</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GestionSystemesTelecom/gst-library</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/25814331</PackageIconUrl>
-    <RepositoryType>nuget</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>GST.Library.Data</AssemblyName>

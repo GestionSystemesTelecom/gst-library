@@ -4,14 +4,7 @@ init:
 install:
   - ECHO %APPVEYOR_BUILD_WORKER_IMAGE%
   - dotnet --version
-  - dotnet restore ./src/GST.Library.API.REST/project.json
-  - dotnet restore ./src/GST.Library.Data/project.json
-  - dotnet restore ./src/GST.Library.Helper/project.json
-  - dotnet restore ./src/GST.Library.StoredProcedureHelper/project.json
-  - dotnet restore ./test/GST.Library.API.REST.Tests/project.json
-  - dotnet restore ./test/GST.Library.Data.Tests/project.json
-  - dotnet restore ./test/GST.Library.Helper.Tests/project.json
-  - dotnet restore ./test/GST.Library.StoredProcedureHelper.Tests/project.json
+  - dotnet restore ./GST.Library.sln
 build_script:
 - powershell .\build.ps1 -t BuildPackages
 before_build:
@@ -25,9 +18,9 @@ deploy:
       secure: QsjsTYGlMBE2oXS8QLMq3TvzcKhW/xatLFuSg+vfoJeaLYxJ1mpfMWs+8chehZbo
     artifact: /GST\.Library.*\.nupkg/
 test_script:
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.API.REST.Tests/project.json
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.Data.Tests/project.json
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.Helper.Tests/project.json
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.StoredProcedureHelper.Tests/project.json
+- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.API.REST.Tests/GST.Library.API.REST.Tests.csproj
+- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.Data.Tests/GST.Library.Data.Tests.csproj
+- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.Helper.Tests/GST.Library.Helper.Tests.csproj
+- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.StoredProcedureHelper.Tests/GST.Library.StoredProcedureHelper.Tests.csproj
 
 
