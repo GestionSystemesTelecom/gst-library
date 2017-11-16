@@ -6,7 +6,7 @@ install:
   - dotnet --version
   - dotnet restore ./GST.Library.sln
 build_script:
-- powershell .\build.ps1 -t BuildPackages
+- powershell .\build.ps1
 before_build:
 - appveyor-retry dotnet restore -v Minimal
 artifacts:
