@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>2.0.0</Version>
+    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <Copyright>GST</Copyright>
+    <Company>GST (Gestion Systemes Telecom)</Company>
+    <Authors>Girard Valérian</Authors>
+    <Title>GST Library String</Title>
+    <Description>Helper for String</Description>
+    <Summary>Helper for String</Summary>
+    <PackageTags> String Helper</PackageTags>
+    <PackageProjectUrl>https://github.com/GestionSystemesTelecom/gst-library/tree/master/src/GST.Library.String</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GestionSystemesTelecom/gst-library</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageIconUrl>https://avatars3.githubusercontent.com/u/25814331</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>GST.Library.String</AssemblyName>
+    <PackageId>GST.Library.String</PackageId>
+  </PropertyGroup>
+</Project>

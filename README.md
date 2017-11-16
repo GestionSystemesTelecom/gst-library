@@ -19,6 +19,7 @@ We provide four pakages:
  * `Install-Package GST.Library.Data`
  * `Install-Package GST.Library.Helper`
  * `Install-Package GST.Library.StoredProcedureHelper`
+ * `Install-Package GST.Library.String`
 
 ## How to build Nuget Package
 
