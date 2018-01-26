@@ -8,29 +8,25 @@
     <Copyright>GST</Copyright>
     <Company>GST (Gestion Systemes Telecom)</Company>
     <Authors>Girard Valérian</Authors>
-    <Title>GST Library Data</Title>
-    <Description>Helpers to manage data</Description>
-    <Summary>Helpers to manage data</Summary>
-    <PackageTags>Data Helper</PackageTags>
-    <PackageProjectUrl>https://github.com/GestionSystemesTelecom/gst-library/tree/master/src/GST.Library.Data</PackageProjectUrl>
+    <Title>Middleware HttpOverrides</Title>
+    <Description>ASP.NET Core basic middleware for supporting HTTP method overrides. Includes:
+      * X-Forwarded-* headers to forward headers from a proxy.
+    </Description>
+    <PackageTags>aspnetcore;proxy;headers;xforwarded</PackageTags>
+    <PackageProjectUrl>https://github.com/GestionSystemesTelecom/gst-library/tree/master/src/GST.Library.Middleware.HttpOverrides</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GestionSystemesTelecom/gst-library</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/25814331</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>GST.Library.Data</AssemblyName>
-    <PackageId>GST.Library.Data</PackageId>
+    <AssemblyName>GST.Library.Middleware.HttpOverrides</AssemblyName>
+    <PackageId>GST.Library.Middleware.HttpOverrides</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GST.Library.Helper\GST.Library.Helper.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.*" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.*" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.1" />
-    <PackageReference Include="System.Globalization" Version="4.3.0" />
-    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
-  </ItemGroup>
-
 </Project>
