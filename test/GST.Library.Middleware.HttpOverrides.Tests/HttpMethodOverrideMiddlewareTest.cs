@@ -21,7 +21,7 @@ namespace GST.Library.Middleware.HttpOverrides.Tests
             var builder = new WebHostBuilder()
                 .Configure(app =>
                 {
-                    app.UseHttpMethodOverride();
+                    app.UseGSTHttpMethodOverride();
                     app.Run(context =>
                     {
                         assertsExecuted = true;
@@ -44,7 +44,7 @@ namespace GST.Library.Middleware.HttpOverrides.Tests
             var builder = new WebHostBuilder()
                 .Configure(app =>
                 {
-                    app.UseHttpMethodOverride();
+                    app.UseGSTHttpMethodOverride();
                     app.Run(context =>
                     {
                         Assert.Equal("POST",context.Request.Method);
@@ -66,7 +66,7 @@ namespace GST.Library.Middleware.HttpOverrides.Tests
             var builder = new WebHostBuilder()
                 .Configure(app =>
                 {
-                    app.UseHttpMethodOverride();
+                    app.UseGSTHttpMethodOverride();
                     app.Run(context =>
                     {
                         Assert.Equal("GET", context.Request.Method);
@@ -89,7 +89,7 @@ namespace GST.Library.Middleware.HttpOverrides.Tests
             var builder = new WebHostBuilder()
                 .Configure(app =>
                 {
-                    app.UseHttpMethodOverride(new HttpMethodOverrideOptions()
+                    app.UseGSTHttpMethodOverride(new HttpMethodOverrideOptions()
                     {
                         FormFieldName = "_METHOD"
                     });
@@ -120,7 +120,7 @@ namespace GST.Library.Middleware.HttpOverrides.Tests
             var builder = new WebHostBuilder()
                 .Configure(app =>
                 {
-                    app.UseHttpMethodOverride(new HttpMethodOverrideOptions()
+                    app.UseGSTHttpMethodOverride(new HttpMethodOverrideOptions()
                     {
                         FormFieldName = "_METHOD"
                     });
@@ -150,7 +150,7 @@ namespace GST.Library.Middleware.HttpOverrides.Tests
             var builder = new WebHostBuilder()
                 .Configure(app =>
                 {
-                    app.UseHttpMethodOverride(new HttpMethodOverrideOptions()
+                    app.UseGSTHttpMethodOverride(new HttpMethodOverrideOptions()
                     {
                         FormFieldName = "_METHOD"
                     });

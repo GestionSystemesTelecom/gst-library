@@ -13,7 +13,7 @@ namespace GST.Library.Middleware.HttpOverrides.Builder
         /// Allows incoming POST request to override method type with type specified in header.
         /// </summary>
         /// <param name="builder">The <see cref="IApplicationBuilder"/> instance this method extends.</param>
-        public static IApplicationBuilder UseHttpMethodOverride(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseGSTHttpMethodOverride(this IApplicationBuilder builder)
         {
             if (builder == null)
             {
@@ -28,7 +28,7 @@ namespace GST.Library.Middleware.HttpOverrides.Builder
         /// </summary>
         /// <param name="builder">The <see cref="IApplicationBuilder"/> instance this method extends.</param>
         /// <param name="options">The <see cref="HttpMethodOverrideOptions"/>.</param>
-        public static IApplicationBuilder UseHttpMethodOverride(this IApplicationBuilder builder, HttpMethodOverrideOptions options)
+        public static IApplicationBuilder UseGSTHttpMethodOverride(this IApplicationBuilder builder, HttpMethodOverrideOptions options)
         {
             if (builder == null)
             {
