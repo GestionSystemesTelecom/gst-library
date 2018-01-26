@@ -14,6 +14,11 @@ namespace GST.Library.Middleware.HttpOverrides.Builder
         /// <seealso cref="Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersDefaults"/>
         public string ForwardedForHeaderName { get; set; } = ForwardedHeadersDefaults.XForwardedForHeaderName;
 
+        /// <summary>
+        /// </summary>
+        /// <seealso cref="Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersDefaults"/>
+        public string RealIpHeaderName { get; set; } = ForwardedHeadersDefaults.XRealIPHeaderName;
+
         public string ForwardedHostHeaderName { get; set; } = ForwardedHeadersDefaults.XForwardedHostHeaderName;
 
         /// <summary>
@@ -67,5 +72,11 @@ namespace GST.Library.Middleware.HttpOverrides.Builder
         /// The default is 'false'.
         /// </summary>
         public bool RequireHeaderSymmetry { get; set; } = false;
+
+        /// <summary>
+        /// Force using X-Forwarded-For ou X-Real-Ip
+        /// The default is 'false'.
+        /// </summary>
+        public bool ForceXForxardedOrRealIp { get; set; } = false;
     }
 }

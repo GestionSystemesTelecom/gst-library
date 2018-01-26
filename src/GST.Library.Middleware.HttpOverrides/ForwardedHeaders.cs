@@ -12,6 +12,7 @@ namespace GST.Library.Middleware.HttpOverrides
         XForwardedFor = 1 << 0,
         XForwardedHost = 1 << 1,
         XForwardedProto = 1 << 2,
-        All = XForwardedFor | XForwardedHost | XForwardedProto
+        XRealIp = 1 << 3,
+        All = XForwardedFor | XForwardedHost | XForwardedProto | XRealIp
     }
 }

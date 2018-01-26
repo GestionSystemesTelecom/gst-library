@@ -75,6 +75,13 @@ namespace GST.Library.Middleware.HttpOverrides
                 entryCount = Math.Max(forwardedFor.Length, entryCount);
             }
 
+            if ((_options.ForwardedHeaders & ForwardedHeaders.XRealIp) == ForwardedHeaders.XRealIp)
+            {
+                checkFor = true;
+                forwardedFor = context.Request.Headers.GetCommaSeparatedValues(_options.RealIpHeaderName);
+                entryCount = Math.Max(forwardedFor.Length, entryCount);
+            }
+
             if ((_options.ForwardedHeaders & ForwardedHeaders.XForwardedProto) == ForwardedHeaders.XForwardedProto)
             {
                 checkProto = true;
@@ -147,12 +154,12 @@ namespace GST.Library.Middleware.HttpOverrides
                 if (checkFor)
                 {
                     // For the first instance, allow remoteIp to be null for servers that don't support it natively.
-                    /*if (currentValues.RemoteIpAndPort != null && checkKnownIps && !CheckKnownAddress(currentValues.RemoteIpAndPort.Address))
+                    if ( !_options.ForceXForxardedOrRealIp && (currentValues.RemoteIpAndPort != null && checkKnownIps && !CheckKnownAddress(currentValues.RemoteIpAndPort.Address)))
                     {
                         // Stop at the first unknown remote IP, but still apply changes processed so far.
                         _logger.LogDebug(1, $"Unknown proxy: {currentValues.RemoteIpAndPort}");
                         break;
-                    }*/
+                    }
 
                     IPEndPoint parsedEndPoint;
                     if (IPEndPointParser.TryParse(set.IpAndPortText, out parsedEndPoint))
