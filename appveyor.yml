@@ -18,9 +18,9 @@ deploy:
       secure: QsjsTYGlMBE2oXS8QLMq3TvzcKhW/xatLFuSg+vfoJeaLYxJ1mpfMWs+8chehZbo
     artifact: /GST\.Library.*\.nupkg/
 test_script:
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.API.REST.Tests/GST.Library.API.REST.Tests.csproj
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.Data.Tests/GST.Library.Data.Tests.csproj
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.Helper.Tests/GST.Library.Helper.Tests.csproj
-- dotnet test -f netcoreapp2.0 -c Test ./test/GST.Library.StoredProcedureHelper.Tests/GST.Library.StoredProcedureHelper.Tests.csproj
+- dotnet test -f netcoreapp2.1 -c Test ./test/GST.Library.API.REST.Tests/GST.Library.API.REST.Tests.csproj
+- dotnet test -f netcoreapp2.1 -c Test ./test/GST.Library.Data.Tests/GST.Library.Data.Tests.csproj
+- dotnet test -f netcoreapp2.1 -c Test ./test/GST.Library.Helper.Tests/GST.Library.Helper.Tests.csproj
+- dotnet test -f netcoreapp2.1 -c Test ./test/GST.Library.StoredProcedureHelper.Tests/GST.Library.StoredProcedureHelper.Tests.csproj
 
 

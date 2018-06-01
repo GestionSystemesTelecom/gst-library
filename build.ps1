@@ -8,6 +8,6 @@ $pakages = @(
     )
 For ($i=0; $i -lt $pakages.Length; $i++) {
     dotnet restore $pakages[$i]
-    dotnet build $pakages[$i] --configuration Release --framework netcoreapp2.0 --force
+    dotnet build $pakages[$i] --configuration Release --framework netcoreapp2.1 --force
     dotnet pack $pakages[$i] --configuration Release --include-source --include-symbols --output ../../nupkgs
 }
