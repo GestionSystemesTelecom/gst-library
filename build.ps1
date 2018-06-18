@@ -4,7 +4,8 @@ $pakages = @(
 	"src/GST.Library.Middleware.HttpOverrides/GST.Library.Middleware.HttpOverrides.csproj",
     "src/GST.Library.Helper/GST.Library.Helper.csproj",
     "src/GST.Library.StoredProcedureHelper/GST.Library.StoredProcedureHelper.csproj",
-	"src/GST.Library.String/GST.Library.String.csproj"
+	"src/GST.Library.String/GST.Library.String.csproj",
+	"src/GST.Library.TimeZone/GST.Library.TimeZone.csproj"
     )
 For ($i=0; $i -lt $pakages.Length; $i++) {
     dotnet restore $pakages[$i]
