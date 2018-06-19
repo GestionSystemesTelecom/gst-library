@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GST.Library.TimeZone.ModelBinder
 {
     /// <summary>
-    /// 
+    /// For Date in the URL
     /// </summary>
     public class DateTimeBinder : IModelBinder
     {
@@ -38,7 +38,7 @@ namespace GST.Library.TimeZone.ModelBinder
 
             if (string.IsNullOrEmpty(valueProviderResult.FirstValue))
             {
-                return null;
+                return Task.CompletedTask;
             }
 
             DateTime datetime;

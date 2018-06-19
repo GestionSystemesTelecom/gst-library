@@ -1,6 +1,7 @@
 ﻿using GST.Library.TimeZone.Services.Abstract;
 using Microsoft.AspNetCore.Http;
 using System;
+using System.Linq;
 using TimeZoneConverter;
 
 namespace GST.Library.TimeZone.Services
@@ -23,7 +24,11 @@ namespace GST.Library.TimeZone.Services
         /// </summary>
         public TimeZoneHelper(IHttpContextAccessor context)
         {
-            TimeZone = TZConvert.GetTimeZoneInfo(context.HttpContext?.User.FindFirst("zoneinfo").Value);
+            if (context.HttpContext?.User.Claims.Any(a => a.Type == "zoneinfo") ?? false)
+                TimeZone = TZConvert.GetTimeZoneInfo(context.HttpContext?.User.FindFirst("zoneinfo").Value);
+            else
+                TimeZone = TZConvert.GetTimeZoneInfo("utc");
+
             //TimeZone =  TimeZoneInfo.FindSystemTimeZoneById(context.HttpContext?.User.FindFirst("zoneinfo").Value);
         }
 

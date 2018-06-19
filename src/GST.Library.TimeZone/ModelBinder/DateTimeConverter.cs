@@ -1,8 +1,10 @@
-﻿using GST.Library.TimeZone.Services.Abstract;
+﻿using GST.Library.TimeZone.Core;
+using GST.Library.TimeZone.Services.Abstract;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace GST.Library.TimeZone.ModelBinder
@@ -35,7 +37,7 @@ namespace GST.Library.TimeZone.ModelBinder
         /// </returns>
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(DateTime) || objectType == typeof(DateTime?);
+            return objectType == typeof(DateTime) || objectType == typeof(DateTime?) || objectType == typeof(DateTimeZone);
         }
 
         /// <summary>
@@ -51,7 +53,7 @@ namespace GST.Library.TimeZone.ModelBinder
         /// <exception cref="System.NotImplementedException"></exception>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            return TimeZoneHelper().GetUtcTime(DateTime.Parse(reader.Value.ToString()));
         }
 
         /// <summary>
@@ -62,7 +64,17 @@ namespace GST.Library.TimeZone.ModelBinder
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            // Null are already filtered
+            //if (value is DateTimeZone)
+            //{
+            //    writer.WriteValue(Convert.ToDateTime(value).ToString());
+            //}
+            //else
+            //{
+            //    // Null are already filtered
+            //    var userCulture = TimeZoneHelper();
+            //    writer.WriteValue(TimeZoneInfo.ConvertTime(Convert.ToDateTime(value), userCulture.TimeZone).ToString());
+            //}
+
             var userCulture = TimeZoneHelper();
             writer.WriteValue(TimeZoneInfo.ConvertTime(Convert.ToDateTime(value), userCulture.TimeZone).ToString());
             writer.Flush();
