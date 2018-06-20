@@ -41,8 +41,7 @@ namespace GST.Library.TimeZone.ModelBinder
                 return Task.CompletedTask;
             }
 
-            DateTime datetime;
-            if (DateTime.TryParse(valueProviderResult.FirstValue, null, DateTimeStyles.AdjustToUniversal, out datetime))
+            if (DateTime.TryParse(valueProviderResult.FirstValue, null, DateTimeStyles.AdjustToUniversal, out DateTime datetime))
             {
                 bindingContext.Result =
                     ModelBindingResult.Success(TimeZoneHelper.GetUtcTime(datetime));

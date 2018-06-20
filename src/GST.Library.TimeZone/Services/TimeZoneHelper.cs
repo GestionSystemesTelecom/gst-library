@@ -25,10 +25,13 @@ namespace GST.Library.TimeZone.Services
         public TimeZoneHelper(IHttpContextAccessor context)
         {
             if (context.HttpContext?.User.Claims.Any(a => a.Type == "zoneinfo") ?? false)
+            {
                 TimeZone = TZConvert.GetTimeZoneInfo(context.HttpContext?.User.FindFirst("zoneinfo").Value);
+            }
             else
+            {
                 TimeZone = TZConvert.GetTimeZoneInfo("utc");
-
+            }
             //TimeZone =  TimeZoneInfo.FindSystemTimeZoneById(context.HttpContext?.User.FindFirst("zoneinfo").Value);
         }
 

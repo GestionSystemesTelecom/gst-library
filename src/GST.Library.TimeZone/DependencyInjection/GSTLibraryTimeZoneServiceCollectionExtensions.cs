@@ -19,6 +19,7 @@ namespace GST.Library.TimeZone.DependencyInjection
         /// <param name="services"></param>
         public static void AddTimeZoneService(this IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             services.AddScoped<ITimeZoneHelper, TimeZoneHelper>();
         }       
     }

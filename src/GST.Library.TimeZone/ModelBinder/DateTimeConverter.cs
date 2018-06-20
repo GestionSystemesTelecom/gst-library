@@ -3,9 +3,8 @@ using GST.Library.TimeZone.Services.Abstract;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace GST.Library.TimeZone.ModelBinder
 {
@@ -18,6 +17,11 @@ namespace GST.Library.TimeZone.ModelBinder
         /// The user culture
         /// </summary>
         protected readonly Func<ITimeZoneHelper> TimeZoneHelper;
+
+        /// <summary>
+        /// Store the previous class type
+        /// </summary>
+        protected Type PreviousClass;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DateTimeConverter"/> class.
@@ -37,7 +41,14 @@ namespace GST.Library.TimeZone.ModelBinder
         /// </returns>
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(DateTime) || objectType == typeof(DateTime?) || objectType == typeof(DateTimeZone);
+            if(!(objectType == typeof(DateTime) || objectType == typeof(DateTime?)))
+            {
+                PreviousClass = objectType;
+                return false;
+            }
+
+            return true;
+            //|| objectType == typeof(DateTimeZone);
         }
 
         /// <summary>
@@ -53,6 +64,10 @@ namespace GST.Library.TimeZone.ModelBinder
         /// <exception cref="System.NotImplementedException"></exception>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
+            if (HasJsonIgnoreTimeZoneAttribute(reader.Path))
+            {
+                return reader.Value;
+            }
             return TimeZoneHelper().GetUtcTime(DateTime.Parse(reader.Value.ToString()));
         }
 
@@ -64,20 +79,23 @@ namespace GST.Library.TimeZone.ModelBinder
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            //if (value is DateTimeZone)
-            //{
-            //    writer.WriteValue(Convert.ToDateTime(value).ToString());
-            //}
-            //else
-            //{
-            //    // Null are already filtered
-            //    var userCulture = TimeZoneHelper();
-            //    writer.WriteValue(TimeZoneInfo.ConvertTime(Convert.ToDateTime(value), userCulture.TimeZone).ToString());
-            //}
+            if (HasJsonIgnoreTimeZoneAttribute(writer.Path))
+            {
+                writer.WriteValue(Convert.ToDateTime(value));
+            }
+            else
+            {
+                writer.WriteValue(TimeZoneInfo.ConvertTime(Convert.ToDateTime(value), TimeZoneHelper().TimeZone).ToString());
+            }
 
-            var userCulture = TimeZoneHelper();
-            writer.WriteValue(TimeZoneInfo.ConvertTime(Convert.ToDateTime(value), userCulture.TimeZone).ToString());
             writer.Flush();
+        }
+
+        private bool HasJsonIgnoreTimeZoneAttribute(string Path)
+        {
+            string propertyName = Path.Split('.').Last();
+            var a = PreviousClass.GetProperty(propertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+            return a.GetCustomAttribute<JsonIgnoreTimeZoneAttribute>() != null;
         }
     }
 }

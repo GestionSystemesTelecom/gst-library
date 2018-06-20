@@ -18,7 +18,7 @@ namespace GST.Library.TimeZone.ModelBinder
         /// <param name="option">The option.</param>
         /// <param name="serviceCollection">The service collection.</param>
         /// <returns></returns>
-        public static MvcJsonOptions RegisterDateTimeConverter(this MvcJsonOptions option, IServiceCollection serviceCollection)
+        public static MvcJsonOptions UseDateTimeConverter(this MvcJsonOptions option, IServiceCollection serviceCollection)
         {
             // TODO: BuildServiceProvider could be optimized
             option.SerializerSettings.Converters.Add(new DateTimeConverter(() => serviceCollection.BuildServiceProvider().GetService<ITimeZoneHelper>()));
