@@ -9,6 +9,7 @@ What's inside :
  * [API REST Helper](./src/GST.Library.API.REST/README.md)
  * [A Data extention](./src/GST.Library.Data/README.md)
  * [Stored Procedure Helper](./src/GST.Library.StoredProcedureHelper/README.md)
+ * [TimeZone manager](./src/GST.Library.TimeZone/README.md)
 
 
 ## How to Install
