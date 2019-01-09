@@ -13,18 +13,23 @@ using Microsoft.Extensions.Options;
 
 namespace GST.Library.Middleware.HttpOverrides
 {
+    /// <summary>
+    /// ForwardedHeadersMiddleware
+    /// </summary>
     public class ForwardedHeadersMiddleware
     {
         private readonly ForwardedHeadersOptions _options;
         private readonly RequestDelegate _next;
         private readonly ILogger _logger;
 
+        /// <summary>
+        /// ForwardedHeadersMiddleware
+        /// </summary>
+        /// <param name="next"></param>
+        /// <param name="loggerFactory"></param>
+        /// <param name="options"></param>
         public ForwardedHeadersMiddleware(RequestDelegate next, ILoggerFactory loggerFactory, IOptions<ForwardedHeadersOptions> options)
         {
-            if (next == null)
-            {
-                throw new ArgumentNullException(nameof(next));
-            }
             if (loggerFactory == null)
             {
                 throw new ArgumentNullException(nameof(loggerFactory));
@@ -44,7 +49,7 @@ namespace GST.Library.Middleware.HttpOverrides
 
             _options = options.Value;
             _logger = loggerFactory.CreateLogger<ForwardedHeadersMiddleware>();
-            _next = next;
+            _next = next ?? throw new ArgumentNullException(nameof(next));
         }
 
         private static void EnsureOptionNotNullorWhitespace(string value, string propertyName)
@@ -55,12 +60,21 @@ namespace GST.Library.Middleware.HttpOverrides
             }
         }
 
+        /// <summary>
+        /// Invoke
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public Task Invoke(HttpContext context)
         {
             ApplyForwarders(context);
             return _next(context);
         }
 
+        /// <summary>
+        /// ApplyForwarders
+        /// </summary>
+        /// <param name="context"></param>
         public void ApplyForwarders(HttpContext context)
         {
             // Gather expected headers. Enabled headers must have the same number of entries.

@@ -7,18 +7,22 @@ using System.Net;
 
 namespace GST.Library.Middleware.HttpOverrides.Builder
 {
+    /// <summary>
+    /// ForwardedHeadersOptions
+    /// </summary>
     public class ForwardedHeadersOptions
     {
         /// <summary>
         /// </summary>
-        /// <seealso cref="Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersDefaults"/>
         public string ForwardedForHeaderName { get; set; } = ForwardedHeadersDefaults.XForwardedForHeaderName;
 
         /// <summary>
         /// </summary>
-        /// <seealso cref="Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersDefaults"/>
         public string RealIpHeaderName { get; set; } = ForwardedHeadersDefaults.XRealIPHeaderName;
 
+        /// <summary>
+        /// ForwardedHostHeaderName
+        /// </summary>
         public string ForwardedHostHeaderName { get; set; } = ForwardedHeadersDefaults.XForwardedHostHeaderName;
 
         /// <summary>

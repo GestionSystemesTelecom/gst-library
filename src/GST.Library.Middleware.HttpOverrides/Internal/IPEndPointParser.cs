@@ -5,8 +5,17 @@ using System.Net;
 
 namespace GST.Library.Middleware.HttpOverrides.Internal
 {
+    /// <summary>
+    /// IPEndPointParser
+    /// </summary>
     public static class IPEndPointParser
     {
+        /// <summary>
+        /// TryParse
+        /// </summary>
+        /// <param name="addressWithPort"></param>
+        /// <param name="endpoint"></param>
+        /// <returns></returns>
         public static bool TryParse(string addressWithPort, out IPEndPoint endpoint)
         {
             string addressPart = null;
@@ -61,8 +70,7 @@ namespace GST.Library.Middleware.HttpOverrides.Internal
             {
                 if (portPart != null)
                 {
-                    int port;
-                    if (int.TryParse(portPart, out port))
+                    if (int.TryParse(portPart, out int port))
                     {
                         endpoint = new IPEndPoint(address, port);
                         return true;

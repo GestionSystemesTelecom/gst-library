@@ -3,6 +3,9 @@
 
 namespace GST.Library.Middleware.HttpOverrides.Builder
 {
+    /// <summary>
+    /// HttpMethodOverrideOptions
+    /// </summary>
     public class HttpMethodOverrideOptions
     {
         /// <summary>

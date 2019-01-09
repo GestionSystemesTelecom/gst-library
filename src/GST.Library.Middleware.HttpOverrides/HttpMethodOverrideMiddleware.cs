@@ -9,18 +9,22 @@ using Microsoft.Extensions.Options;
 
 namespace GST.Library.Middleware.HttpOverrides
 {
+    /// <summary>
+    /// HttpMethodOverrideMiddleware
+    /// </summary>
     public class HttpMethodOverrideMiddleware
     {
         private const string xHttpMethodOverride = "X-Http-Method-Override";
         private readonly RequestDelegate _next;
         private readonly HttpMethodOverrideOptions _options;
 
+        /// <summary>
+        /// HttpMethodOverrideMiddleware
+        /// </summary>
+        /// <param name="next"></param>
+        /// <param name="options"></param>
         public HttpMethodOverrideMiddleware(RequestDelegate next, IOptions<HttpMethodOverrideOptions> options)
         {
-            if (next == null)
-            {
-                throw new ArgumentNullException(nameof(next));
-            }
             if (options == null)
             {
                 throw new ArgumentNullException(nameof(options));
@@ -29,6 +33,11 @@ namespace GST.Library.Middleware.HttpOverrides
             _options = options.Value;
         }
 
+        /// <summary>
+        /// Invoke
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task Invoke(HttpContext context)
         {
             if (string.Equals(context.Request.Method, "POST", StringComparison.OrdinalIgnoreCase))

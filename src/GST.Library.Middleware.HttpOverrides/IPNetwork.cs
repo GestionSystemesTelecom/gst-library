@@ -5,8 +5,16 @@ using System.Net;
 
 namespace GST.Library.Middleware.HttpOverrides
 {
+    /// <summary>
+    /// IPNetwork
+    /// </summary>
     public class IPNetwork
     {
+        /// <summary>
+        /// IPNetwork
+        /// </summary>
+        /// <param name="prefix"></param>
+        /// <param name="prefixLength"></param>
         public IPNetwork(IPAddress prefix, int prefixLength)
         {
             Prefix = prefix;
@@ -15,6 +23,9 @@ namespace GST.Library.Middleware.HttpOverrides
             Mask = CreateMask();
         }
 
+        /// <summary>
+        /// Prefix
+        /// </summary>
         public IPAddress Prefix { get; }
 
         private byte[] PrefixBytes { get; }
@@ -26,6 +37,11 @@ namespace GST.Library.Middleware.HttpOverrides
 
         private byte[] Mask { get; }
 
+        /// <summary>
+        /// Contains
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
         public bool Contains(IPAddress address)
         {
             if (Prefix.AddressFamily != address.AddressFamily)

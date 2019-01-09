@@ -7,6 +7,9 @@ using Microsoft.Extensions.Options;
 
 namespace GST.Library.Middleware.HttpOverrides.Builder
 {
+    /// <summary>
+    /// HttpMethodOverrideExtensions
+    /// </summary>
     public static class HttpMethodOverrideExtensions
     {
         /// <summary>

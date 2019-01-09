@@ -48,7 +48,7 @@ do
 	if [ $? -ne 0 ]; then
 		print_warning "Restore failed $package"
 	fi
-    dotnet build $package --configuration Release --framework netcoreapp2.1 --force
+    dotnet build $package --configuration Release --framework netcoreapp2.2 --force
 	if [ $? -ne 0 ]; then
 		print_warning "Build failed $package"
 	fi
