@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <Version>2.0.0</Version>
-    <FileVersion>2.0.0.0</FileVersion>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Version>2.2.0</Version>
+    <FileVersion>2.2.0.0</FileVersion>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
     <Copyright>GST</Copyright>
     <Company>GST (Gestion Systemes Telecom)</Company>
     <Authors>Girard Valérian</Authors>
@@ -23,9 +23,13 @@
     <PackageId>GST.Library.TimeZone</PackageId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(TargetFramework)|$(Platform)' == 'netcoreapp2.2|AnyCPU'">
+    <DefineConstants>NETCOREAPP</DefineConstants>
+  </PropertyGroup>
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
-    <PackageReference Include="TimeZoneConverter" Version="2.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="TimeZoneConverter" Version="2.5.1" />
   </ItemGroup>
 </Project>
