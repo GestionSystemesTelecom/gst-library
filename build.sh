@@ -1,5 +1,6 @@
 #!/bin/sh
 
+fullPath=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
@@ -48,11 +49,11 @@ do
 	if [ $? -ne 0 ]; then
 		print_warning "Restore failed $package"
 	fi
-    dotnet build $package --configuration Release --framework netcoreapp2.2 --force
+    dotnet build $package --configuration Release --force
 	if [ $? -ne 0 ]; then
 		print_warning "Build failed $package"
 	fi
-    dotnet pack $package --configuration Release --include-source --include-symbols --output ../../nupkgs
+    dotnet pack $package --force -c Release --include-source --include-symbols --output $fullPath/nupkgs
 	if [ $? -ne 0 ]; then
 		print_warning "Pack failed $package"
 	fi

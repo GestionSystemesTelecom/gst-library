@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Version>2.2.2</Version>
-    <FileVersion>2.2.2.0</FileVersion>
-    <AssemblyVersion>2.2.2.0</AssemblyVersion>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp2.2</TargetFrameworks>
+    <Version>3.0.0</Version>
+    <FileVersion>3.0.0.0</FileVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <Copyright>GST</Copyright>
     <Company>GST (Gestion Systemes Telecom)</Company>
     <Authors>Girard Valérian</Authors>
@@ -14,8 +14,8 @@
     <PackageTags>Stored Procedure Helper</PackageTags>
     <PackageProjectUrl>https://github.com/GestionSystemesTelecom/gst-library/tree/master/src/GST.Library.StoredProcedureHelper</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GestionSystemesTelecom/gst-library</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE.md</PackageLicenseUrl>
-    <PackageIconUrl>https://avatars3.githubusercontent.com/u/25814331</PackageIconUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageIcon>cfast.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -27,10 +27,20 @@
     <ProjectReference Include="..\GST.Library.Helper\GST.Library.Helper.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)|$(Platform)'=='netcoreapp3.0|AnyCPU'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.0.1" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)|$(Platform)'=='netcoreapp2.2|AnyCPU'">
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.0" />
     <PackageReference Include="System.Data.Common" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md" Pack="true" PackagePath="" />
+    <None Include="..\..\cfast.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 </Project>

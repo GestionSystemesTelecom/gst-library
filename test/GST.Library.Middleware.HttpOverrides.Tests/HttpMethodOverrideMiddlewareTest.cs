@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Xunit;
+using HttpMethodOverrideOptions = GST.Library.Middleware.HttpOverrides.Builder.HttpMethodOverrideOptions;
 
 namespace GST.Library.Middleware.HttpOverrides.Tests
 {

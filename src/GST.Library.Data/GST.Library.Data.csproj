@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Version>2.2.3</Version>
-    <FileVersion>2.2.3.0</FileVersion>
-    <AssemblyVersion>2.2.3.0</AssemblyVersion>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp2.2</TargetFrameworks>
+    <Version>3.0.0</Version>
+    <FileVersion>3.0.0.0</FileVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <Copyright>GST</Copyright>
     <Company>GST (Gestion Systemes Telecom)</Company>
     <Authors>Girard Valérian</Authors>
@@ -14,8 +14,8 @@
     <PackageTags>Data Helper</PackageTags>
     <PackageProjectUrl>https://github.com/GestionSystemesTelecom/gst-library/tree/master/src/GST.Library.Data</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GestionSystemesTelecom/gst-library</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/GestionSystemesTelecom/gst-library/blob/master/LICENSE.md</PackageLicenseUrl>
-    <PackageIconUrl>https://avatars3.githubusercontent.com/u/25814331</PackageIconUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageIcon>cfast.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -28,9 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.6.0" />
     <PackageReference Include="System.Globalization" Version="4.3.0" />
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md" Pack="true" PackagePath="" />
+    <None Include="..\..\cfast.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 </Project>
